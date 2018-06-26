@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Tests" tests="6" assertions="6" failures="0" errors="0" time="0.395724">
+    <testsuite name="com\runchina\LeaderBoardsTest" file="/Users/jianzi0307/Documents/development/php/rc-leaderboard-php/tests/phpunit/LeaderBoardsTest.php" tests="6" assertions="6" failures="0" errors="0" time="0.395724">
+      <testcase name="getLeaderboard" class="com\runchina\LeaderBoardsTest" file="/Users/jianzi0307/Documents/development/php/rc-leaderboard-php/tests/phpunit/LeaderBoardsTest.php" line="54" assertions="1" time="0.056858"/>
+      <testcase name="top" class="com\runchina\LeaderBoardsTest" file="/Users/jianzi0307/Documents/development/php/rc-leaderboard-php/tests/phpunit/LeaderBoardsTest.php" line="68" assertions="1" time="0.067846"/>
+      <testcase name="getAroundUserLeaderboard" class="com\runchina\LeaderBoardsTest" file="/Users/jianzi0307/Documents/development/php/rc-leaderboard-php/tests/phpunit/LeaderBoardsTest.php" line="82" assertions="1" time="0.066528"/>
+      <testcase name="getRank" class="com\runchina\LeaderBoardsTest" file="/Users/jianzi0307/Documents/development/php/rc-leaderboard-php/tests/phpunit/LeaderBoardsTest.php" line="97" assertions="1" time="0.066150"/>
+      <testcase name="getBestScore" class="com\runchina\LeaderBoardsTest" file="/Users/jianzi0307/Documents/development/php/rc-leaderboard-php/tests/phpunit/LeaderBoardsTest.php" line="113" assertions="1" time="0.071292"/>
+      <testcase name="getTotalScore" class="com\runchina\LeaderBoardsTest" file="/Users/jianzi0307/Documents/development/php/rc-leaderboard-php/tests/phpunit/LeaderBoardsTest.php" line="127" assertions="1" time="0.067050"/>
+    </testsuite>
+  </testsuite>
+</testsuites>
