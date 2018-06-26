@@ -70,11 +70,12 @@ class LeaderBoards implements ILeaderBoards
      * 添加
      * @param Entity|null $entity
      * @param array $options
+     * @return string
      */
     public function add(Entity $entity = null, array $options = [])
     {
         if (!$entity || !$entity->getUserId() || !$entity->getAttrName()) {
-            die("parameter error.");
+            throw new \InvalidArgumentException('parameter error.');
         }
         $entity->setCreatedAt($entity->getCreatedAt() ? $entity->getCreatedAt() : date('Y-m-d H:i:s'));
         $entity->setScore($entity->getScore() > 0 ? $entity->getScore() : 0);
@@ -153,7 +154,7 @@ class LeaderBoards implements ILeaderBoards
         $to = isset($options['to']) ? $options['to'] : -1;
 
         if (!$attrName) {
-            die('params error.');
+            throw new \InvalidArgumentException('parameter error.');
         }
         $sType = ($scoreType === 'best') ? 'bestscore:' : 'totalscore:';
         return $this->redis->zRevRange('leaderboard:' . $group . ':' . $period . ':' . $sType . $attrName, $from, $to);
@@ -199,7 +200,7 @@ class LeaderBoards implements ILeaderBoards
         $period = isset($options['period']) ? $options['period'] : 'alltime';
         $attrName = isset($options['attrName']) ? $options['attrName'] : null;
         if (!$userId || !$attrName) {
-            die('params error.');
+            throw new \InvalidArgumentException('parameter error.');
         }
         $key = 'hscore:' . $group . ':' . $period . ':' . $userId . ':' . $attrName;
         $scoreId = $this->redis->hGet($key, 'best_score');
@@ -218,7 +219,7 @@ class LeaderBoards implements ILeaderBoards
         $period = isset($options['period']) ? $options['period'] : 'alltime';
         $attrName = isset($options['attrName']) ? $options['attrName'] : null;
         if (!$userId || !$attrName) {
-            die('params error.');
+            throw new \InvalidArgumentException('parameter error.');
         }
         $key = 'hscore:' . $group . ':' . $period . ':' . $userId . ':' . $attrName;
         return $this->redis->hGet($key, 'total_score');
@@ -237,7 +238,7 @@ class LeaderBoards implements ILeaderBoards
         $attrName = isset($options['attrName']) ? $options['attrName'] : null;
         $scoreType = isset($options['scoreType']) ? $options['scoreType'] : 'best';
         if (!$userId || !$attrName) {
-            die('params error.');
+            throw new \InvalidArgumentException('parameter error.');
         }
         $sType = ($scoreType === 'best') ? 'bestscore:' : 'totalscore:';
         return $this->redis->zRevRank('leaderboard:' . $group . ':' . $period . ':' . $sType . $attrName, $userId);

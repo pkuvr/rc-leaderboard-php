@@ -48,6 +48,20 @@ class LeaderBoardsTest extends TestCase
     }
 
     /**
+     * 测试添加失败
+     * @expectedException \InvalidArgumentException
+     * @test
+     */
+    public function addFailed()
+    {
+        $entity = new Entity();
+        $entity->setCreatedAt(date('Y-m-d H:i:s'));
+        $entity->setScore(1000);
+        $entity->setExtra(json_encode(["nickname" => "user12"]));
+        $this->lb->add($entity);
+    }
+
+    /**
      * 获取排行榜
      * @test
      */
