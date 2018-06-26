@@ -173,7 +173,7 @@ class LeaderBoards implements ILeaderBoards
      */
     public function getTop($top, array $options = [])
     {
-        $options['from'] = 1;
+        $options['from'] = 0;
         $options['to'] = $top;
         return $this->getLeaderboard($options);
     }
