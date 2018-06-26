@@ -1,4 +1,5 @@
 vendor/*
+reports/*
 composer.lock
 .DS_Store
 .idea
