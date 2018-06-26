@@ -26,4 +26,6 @@ interface ILeaderBoards
     public function getRank($userId, array $options = []);
 
     public function removeLeaderboards(array $options = []);
+
+    public function getRedisInstance();
 }

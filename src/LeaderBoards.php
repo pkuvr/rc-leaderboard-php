@@ -27,6 +27,11 @@ class LeaderBoards implements ILeaderBoards
         }
     }
 
+    public function getRedisInstance()
+    {
+        return $this->redis;
+    }
+
     /**
      * 设置周期性排行
      * @param bool $daily
