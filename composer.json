@@ -3,6 +3,7 @@
   "description": "Leaderboards backed by Redis in PHP.",
   "type": "library",
   "license": "MIT",
+  "version": "1.0.3",
   "authors": [
     {
       "name": "Jian Jiang",
