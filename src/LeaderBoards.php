@@ -157,7 +157,7 @@ class LeaderBoards implements ILeaderBoards
             throw new \InvalidArgumentException('parameter error.');
         }
         $sType = ($scoreType === 'best') ? 'bestscore:' : 'totalscore:';
-        return $this->redis->zRevRange('leaderboard:' . $group . ':' . $period . ':' . $sType . $attrName, $from, $to);
+        return $this->redis->zRevRange('leaderboard:' . $group . ':' . $period . ':' . $sType . $attrName, $from, $to, true);
     }
 
     /**
